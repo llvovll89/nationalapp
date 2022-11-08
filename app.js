@@ -4,10 +4,12 @@ const inputTag = document.querySelector(".form-input");
 const content = document.querySelector(".content");
 
 btn.addEventListener("click", addTable);
+formTable.addEventListener('submit', addTable);
 
 function addTable(e) {
   e.preventDefault();
-  const inputVal = inputTag.value;
+  const inputVal = inputTag.value.trim();
+  console.log(inputVal.length);
   const API_KEY =
     "urIcbpoTLWxb29j%2Fwpj%2BW0Kit7O7x3D0cuZgu8AmBU53BswjDvNTfzkbeZjILO%2BzvBhsrnS1JcyK80dGJmMsKw%3D%3D";
   const url = `http://apis.data.go.kr/1262000/OverviewKorRelationService/getOverviewKorRelationList?serviceKey=${API_KEY}&cond[country_nm::EQ]=${inputVal}&pageNo=1&numOfRows=197&_type=json`;
